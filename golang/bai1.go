@@ -1,0 +1,92 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+var companyName = "HL Company"
+var currentYear int
+var temp string
+
+// to return 2 values use (varaiable type and error)
+
+func bai2_sqrt(f float64) (float64, error) {
+	if f < 0 {
+		return 0, fmt.Errorf("Can't execute with number < 0")
+	} else {
+		return math.Sqrt(f), nil
+	}
+}
+
+func checkSchedule(date string) string {
+	switch date {
+	case "Monday":
+		return "Chest"
+	case "Tuesday":
+		return "Shoulders"
+	case "Wednesday":
+		return "Cardio"
+	case "Thursday":
+		return "Back"
+	case "Friday":
+		return "Off"
+	case "Saturday":
+		return ":Legs"
+	case "Sunday":
+		return "Cheat day"
+	default:
+		return "Relax"
+	}
+}
+
+func findMax(a int, b int) (int, error) {
+	if a > b {
+		return a, nil
+	} else if b > a {
+		return b, nil
+	} else {
+		return 0, fmt.Errorf("Two numbers equals")
+	}
+}
+
+func findMin(a int, b int) (int, error) {
+	if a < b {
+		return a, nil
+	} else if b < a {
+		return b, nil
+	} else {
+		return 0, fmt.Errorf("Two numbers equals")
+	}
+}
+
+func main() {
+	// Bai 1: Varaiable
+	currentYear := 2026
+	temp := "Hello World"
+
+	s := fmt.Sprintf("%s was born in %d", companyName, currentYear)
+
+	fmt.Println(s)
+
+	fmt.Println(temp + "! " + s)
+	// Bai 2: Codition
+	var r, msg = bai2_sqrt(5)
+
+	if msg != nil {
+		fmt.Println(msg)
+	} else {
+		fmt.Println("Result: ", r)
+	}
+
+	var date string
+
+	_, err := fmt.Scanf("%s", &date)
+
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		task := checkSchedule(date)
+		fmt.Println(task)
+	}
+}
