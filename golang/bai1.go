@@ -80,7 +80,7 @@ func main() {
 	}
 
 	var date string
-
+	fmt.Print("Enter: ")
 	_, err := fmt.Scanf("%s", &date)
 
 	if err != nil {
@@ -89,4 +89,24 @@ func main() {
 		task := checkSchedule(date)
 		fmt.Println(task)
 	}
+
+	var a, b int
+	fmt.Print("Nhập số a: ")
+	fmt.Scanln(&a)
+	fmt.Print("Nhập số b: ")
+	fmt.Scanln(&b)
+
+	var max, err1 = findMax(a, b)
+	if err1 != nil {
+		fmt.Println(err1)
+	} else {
+		fmt.Println("Max: ", max)
+	}
+	var min, err2 = findMin(a, b)
+	if err2 != nil {
+		fmt.Println(err2)
+	} else {
+		fmt.Println("Min: ", min)
+	}
+
 }
