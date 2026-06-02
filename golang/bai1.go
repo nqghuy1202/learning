@@ -60,6 +60,33 @@ func findMin(a int, b int) (int, error) {
 	}
 }
 
+func demoArray() {
+	cars := [3]string{"Toyota", "Hyundai", "Honda"}
+
+	for index, car := range cars {
+		fmt.Print(index, car)
+	}
+}
+
+func demoArray2D() {
+	langs := [][]string{{"C++", "C#", "C"}, {"NestJs", "NodeJs", "JavaScript"}, {"Oracle", "MySQL", "MongoDB"}}
+
+	for _, v := range langs {
+		for _, lang := range v {
+			fmt.Print(lang)
+		}
+		fmt.Println()
+	}
+}
+
+func demoSlice() {
+	letters := []string{"a", "b", "c"}
+	letters = append(letters, "d")
+	length := len(letters)
+	fmt.Println("Count: ", length)
+	fmt.Println(letters[:2])
+}
+
 func main() {
 	// Bai 1: Varaiable
 	currentYear := 2026
@@ -92,9 +119,9 @@ func main() {
 
 	var a, b int
 	fmt.Print("Nhập số a: ")
-	fmt.Scanln(&a)
+	fmt.Scan(&a)
 	fmt.Print("Nhập số b: ")
-	fmt.Scanln(&b)
+	fmt.Scan(&b)
 
 	var max, err1 = findMax(a, b)
 	if err1 != nil {
@@ -108,5 +135,8 @@ func main() {
 	} else {
 		fmt.Println("Min: ", min)
 	}
+	demoArray()
+	demoArray2D()
+	demoSlice()
 
 }
