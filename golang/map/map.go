@@ -17,9 +17,9 @@ func main() {
 		fmt.Println("Correct")
 	}
 
-	if r4 := roles[4]; !r4.(bool) {
-		fmt.Println("Correct")
-	}
+	// if r4 := roles[4]; !r4.(bool) {
+	// 	fmt.Println("Correct")
+	// }
 
 	roles[5] = false
 	roles[6] = true
